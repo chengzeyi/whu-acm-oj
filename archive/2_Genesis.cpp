@@ -10,7 +10,7 @@ string processLine(const string &line) {
     bool isAlpha = false;
     size_t count = 0;
     for (auto iter = line.begin() + firstSpacePos + 1; iter != line.end(); ++iter) {
-        if (isalpha(*iter)) {
+        if (isalpha(*iter) || *iter == '-') {
             if (!isAlpha) {
                 isAlpha = true;
             }
@@ -68,11 +68,26 @@ int main(int argc, char *argv[]) {
     while (getline(ss, to, '\n')) {
         cout << processLine(to) << endl;
     }
-#endif
-#ifndef DEBUG
+#else
     string line, to;
     while (getline(cin, to)) {
-        
+        if (!to.empty()) {
+            if (isdigit(to[0])) {
+                if (!line.empty()) {
+                    cout << processLine(line) << endl;
+                    line = to;
+                } else {
+                    line = to;
+                }
+            } else {
+                if (!line.empty()) {
+                    line.append(" ").append(to);
+                }
+            }
+        }
+    }
+    if (!line.empty()) {
+        cout << processLine(line) << endl;
     }
 #endif
     return 0;
