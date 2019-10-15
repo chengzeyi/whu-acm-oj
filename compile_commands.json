@@ -1,0 +1,17 @@
+[
+ {
+  "directory": "/home/cheng/repos/whu-acm-oj",
+  "arguments": [
+   "g++",
+   "-std=c++11",
+   "-Wall",
+   "-c",
+   "-g",
+   "-DDEBUG",
+   "-o",
+   "debug/main.o",
+   "src/main.cpp"
+  ],
+  "file": "src/main.cpp"
+ }
+]
