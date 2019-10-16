@@ -22,6 +22,7 @@ unsigned calcMaxPoint(const std::vector<std::pair<size_t, unsigned>> &animals, s
 }
 
 #ifdef DEBUG
+# define cin _ss
 namespace std {
     stringstream _ss;
 }
@@ -29,7 +30,6 @@ namespace std {
 
 int main(int argc, char *argv[]) {
 #ifdef DEBUG
-# define cin _ss
     std::cin << R"(2
 10 20
 20 30
