@@ -21,13 +21,16 @@ unsigned calcMaxPoint(const std::vector<std::pair<size_t, unsigned>> &animals, s
     return dp.back();
 }
 
+#ifdef DEBUG
 namespace std {
-    stringstream ss;
+    stringstream _ss;
 }
+#endif
 
 int main(int argc, char *argv[]) {
 #ifdef DEBUG
-    std::ss << R"(2
+# define cin _ss
+    std::cin << R"(2
 10 20
 20 30
 30
@@ -36,7 +39,6 @@ int main(int argc, char *argv[]) {
 30 30
 20 20
 30)";
-# define cin ss
 #endif
     size_t n;
     std::vector<std::pair<size_t, unsigned>> animals;
