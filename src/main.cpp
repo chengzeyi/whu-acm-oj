@@ -1,8 +1,16 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <sstream>
+
+#ifdef DEBUG
+#define cin _ss
+namespace std {
+    stringstream _ss;
+}
+#endif
 
 int main(int argc, char *argv[]) {
 #ifdef DEBUG
-#else
+    std::cin << R"()";
 #endif
     return 0;
 }
