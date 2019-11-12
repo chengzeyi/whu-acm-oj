@@ -3,7 +3,7 @@
   "directory": "/home/cheng/repos/whu-acm-oj",
   "arguments": [
    "g++",
-   "-std=c++11",
+   "-std=c++14",
    "-Wall",
    "-c",
    "-g",

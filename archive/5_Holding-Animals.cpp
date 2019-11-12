@@ -1,6 +1,3 @@
-#ifdef DEBUG
-# include "prettyprint.hpp"
-#endif
 #include <bits/stdc++.h>
 
 unsigned calcMaxPoint(const std::vector<std::pair<size_t, unsigned>> &animals, size_t arkSize) {
@@ -15,9 +12,6 @@ unsigned calcMaxPoint(const std::vector<std::pair<size_t, unsigned>> &animals, s
             }
         }
     }
-#ifdef DEBUG
-    std::cout << dp << std::endl;
-#endif
     return dp.back();
 }
 
