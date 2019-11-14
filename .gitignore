@@ -2,3 +2,4 @@
 /debug
 /obj
 /.clangd
+/.gdb_history
