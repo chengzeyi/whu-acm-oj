@@ -3,3 +3,4 @@
 /obj
 /.clangd
 /.gdb_history
+/.gdbinit
