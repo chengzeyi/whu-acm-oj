@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-size_t calcMostDistance(
+size_t calcMostDistant(
         const std::vector<std::unordered_map<size_t, size_t>> &tree,
         size_t &maxCost,
         size_t start=0
@@ -38,8 +38,8 @@ size_t calcMinDistance(
         size_t sum
         ) {
     size_t maxCost;
-    size_t a = calcMostDistance(tree, maxCost);
-    calcMostDistance(tree, maxCost, a);
+    size_t a = calcMostDistant(tree, maxCost);
+    calcMostDistant(tree, maxCost, a);
     return sum * 2 - maxCost;
 }
 

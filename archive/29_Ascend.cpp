@@ -8,7 +8,6 @@ std::string decryptMsg(const std::string &encryptedMsg) {
     return result;
 }
 
-
 #ifdef DEBUG
 #define cin _ss
 namespace std {

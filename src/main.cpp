@@ -3,7 +3,7 @@
 #ifdef DEBUG
 #define cin _ss
 namespace std {
-    stringstream _ss;
+stringstream _ss;
 }
 #endif
 
