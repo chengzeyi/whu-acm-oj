@@ -10,6 +10,8 @@ OBJ_PATH := obj
 SRC_PATH := src
 DBG_PATH := debug
 
+MKDIR := mkdir -p
+
 # compile marcros
 TARGET_NAME := main
 ifeq ($(OS),Windows_NT)
@@ -33,16 +35,20 @@ CLEAN_LIST := $(TARGET) \
 
 # non-phony targets
 $(TARGET): $(OBJ)
+	$(MKDIR) $(BIN_PATH)
 	$(CC) $(CCFLAG) -o $@ $^
 
+$(TARGET_DEBUG): $(OBJ_DEBUG)
+	$(MKDIR) $(DBG_PATH)
+	$(CC) $(CCFLAG) $(DBGFLAG) -o $@ $^
+
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c*
+	$(MKDIR) $(OBJ_PATH)
 	$(CC) $(CCOBJFLAG) -o $@ $<
 
 $(DBG_PATH)/%.o: $(SRC_PATH)/%.c*
+	$(MKDIR) $(DBG_PATH)
 	$(CC) $(CCOBJFLAG) $(DBGFLAG) -o $@ $<
-
-$(TARGET_DEBUG): $(OBJ_DEBUG)
-	$(CC) $(CCFLAG) $(DBGFLAG) -o $@ $^
 
 # phony rules
 
