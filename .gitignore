@@ -4,3 +4,4 @@
 /.clangd
 /.gdb_history
 /.gdbinit
+/compile_commands.json
