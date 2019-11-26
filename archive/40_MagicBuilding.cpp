@@ -5,7 +5,8 @@ size_t calcMinNumOfMagicBuildings(const std::vector<size_t> &buildings) {
     for (auto &&building : buildings) {
         building2Count[building]++;
     }
-    return std::max_element(building2Count.begin(), building2Count.end())->second;
+    return std::max_element(building2Count.begin(), building2Count.end(),
+            [](const std::pair<size_t, size_t> &a, const std::pair<size_t, size_t> &b) { return a.second < b.second; })->second;
 }
 
 #ifdef DEBUG

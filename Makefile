@@ -1,5 +1,5 @@
 # tool marcros
-CC := clang++
+CC := g++
 CCFLAG := -std=gnu++14 -Wall
 DBGFLAG := -g -DDEBUG
 CCOBJFLAG := $(CCFLAG) -c
