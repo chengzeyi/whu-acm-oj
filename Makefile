@@ -4,13 +4,13 @@ CCFLAG := -std=gnu++14 -Wall
 DBGFLAG := -g -DDEBUG
 CCOBJFLAG := $(CCFLAG) -c
 
+MKDIR := mkdir -p
+
 # path marcros
 BIN_PATH := bin
 OBJ_PATH := obj
 SRC_PATH := src
 DBG_PATH := debug
-
-MKDIR := mkdir -p
 
 # compile marcros
 TARGET_NAME := main
