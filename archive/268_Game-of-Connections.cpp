@@ -1372,49 +1372,43 @@ inline std::ostream& operator<<(std::ostream &s, const InfInt &n)
 
 #include <bits/stdc++.h>
 
-std::unordered_map<size_t, InfInt> cache;
+std::vector<InfInt> cache(100 + 1);
 
 InfInt calcNumOfWays(size_t n) {
-    auto it = cache.find(n);
-    if (it != cache.end()) {
-        return it->second;
-    }
-    InfInt result = 0;
     if (n <= 1) {
-        result = 1;
-        goto END;
+        return 1;
     }
-    for (size_t i = 1; i <= 3 && n >= i; ++i) {
-        result += calcNumOfWays(n - i);
+    if (cache[n] != 0) {
+        return cache[n];
     }
-END:
-    cache.emplace(n, result);
-    return result;
+    InfInt count = 0;
+    for (size_t i = 0; i < n; ++i) {
+        count += calcNumOfWays(i) * calcNumOfWays(n - 1 - i);
+    }
+    cache[n] = count;
+    return count;
 }
 
 #ifdef DEBUG
 #define cin _ss
 namespace std {
-    stringstream _ss;
+stringstream _ss;
 }
 #endif
 
 int main(int argc, char *argv[]) {
 #ifdef DEBUG
-    std::cin << R"(1
-2
+    std::cin << R"(2
 3
-0
-)";
+-1)";
 #endif
     while (true) {
-        size_t n;
+        int n;
         std::cin >> n;
-        if (n == 0) {
+        if (n == -1) {
             break;
         }
         std::cout << calcNumOfWays(n) << std::endl;
     }
     return 0;
 }
-
